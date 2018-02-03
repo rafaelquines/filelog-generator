@@ -1,5 +1,14 @@
 var winston = require('winston');
 require('dotenv').config();
+
+if (!process.env.LOG_FILENAME) {
+    console.error('Invalid envoriment');
+    console.error('Please set LOG_FILENAME var');
+    process.exit(1);
+}
+
+process.env.GENERATION_TIME = process.env.GENERATION_TIME || 1000;
+
 const logger = new winston.Logger();
 
 logger.add(winston.transports.File, {
