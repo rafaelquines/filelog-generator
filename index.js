@@ -20,5 +20,6 @@ logger.add(winston.transports.File, {
 var cont = 0;
 
 setInterval(() => {
-    logger.info('filelog-generator: ' + ++cont);
+    console.log('Generating ' + ++cont);
+    logger.info('filelog-generator: ' + cont);
 }, process.env.GENERATION_TIME);
