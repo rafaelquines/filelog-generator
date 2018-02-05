@@ -31,7 +31,8 @@ if (process.env.LOG_OUTPUT === 'mqtt' || process.env.LOG_OUTPUT === 'both') {
     logger.add(winston.transports.MqttTransport, {
         name: 'mqtt-source',
         topic: process.env.MQTT_TOPIC,
-        host: process.env.MQTT_URL
+        host: process.env.MQTT_URL,
+        timestamp: true,
     });
 }
 
