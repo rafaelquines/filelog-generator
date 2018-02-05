@@ -1,4 +1,5 @@
 var winston = require('winston');
+require('./winston-mqtt-transport').MqttTransport;
 require('dotenv').config();
 
 if (!process.env.LOG_FILENAME) {
@@ -10,6 +11,13 @@ if (!process.env.LOG_FILENAME) {
 process.env.GENERATION_TIME = process.env.GENERATION_TIME || 1000;
 
 const logger = new winston.Logger();
+
+logger.add(winston.transports.MqttTransport, {
+    name: 'mqtt-source',
+    topic: process.env.MQTT_TOPIC,
+    host: process.env.MQTT_URL
+});
+
 
 logger.add(winston.transports.File, {
     filename: process.env.LOG_FILENAME,
