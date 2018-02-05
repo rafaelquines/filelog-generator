@@ -1,17 +1,18 @@
 {
-  "name": "log-generator",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "dotenv": "^5.0.0",
-    "mqtt": "^2.15.1",
-    "winston": "^2.4.0"
-  }
+    "name": "log-generator",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "^5.0.0",
+        "mqtt": "^2.15.1",
+        "winston": "^2.4.0"
+    }
 }
